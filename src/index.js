@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import './assets/style/loader.scss';
+import "./assets/style/index.scss";
+import 'bootstrap/dist/css/bootstrap.css';
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+	window.config = window.configDev;
+} 
+else {
+  window.config = window.configProd;
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
