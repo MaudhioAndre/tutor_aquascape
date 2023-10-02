@@ -3,7 +3,7 @@ import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { Modal as RSModal } from "reactstrap";
 
 interface typeRef {
-  setStatusModal(value: boolean): void;
+  setStatusModal (value: boolean) : void;
 }
 
 const RSModalSpinner = React.forwardRef<typeRef, {}>((props, ref) => {

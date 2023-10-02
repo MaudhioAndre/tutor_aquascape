@@ -1,6 +1,6 @@
 import "../../assets/style/admin.scss";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import Swal from "sweetalert2";
 
@@ -34,7 +34,15 @@ export default function HeaderBack() {
     <>
       <div className="div_header_admin">
         <div>ADMIN</div>
-        <button onClick={() => Logout()} className="btn_admin btn_logout">Logout</button>
+        <div>
+          <button className="btn_admin btn_logout">
+            <Link to="/" className="link_to_home">Home</Link>
+          </button>
+          &nbsp;
+          <button onClick={() => Logout()} className="btn_admin btn_logout">
+            Logout
+          </button>
+        </div>
       </div>
     </>
   );

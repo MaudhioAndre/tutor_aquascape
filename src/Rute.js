@@ -9,6 +9,7 @@ import {
 import Admin from "./layouts/Admin";
 import Blog from "./layouts/Blog";
 import Login from "./layouts/Login";
+import Kategori from "./pages/Kategori";
 
 export default function Rute() {
   return (

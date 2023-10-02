@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
-
 import axios from "axios";
 
 import RSModalSpinner from "../etc/RSModalSpinner";
@@ -76,11 +75,11 @@ export default function HeaderFront() {
   return (
     <>
       <div className="header_front">
-        <Link to="/" className="title_header">AQUASCAPE TUTORIAL</Link>
+        <Link to="/" className="title_header">AQUASCAPE GUIDE</Link>
         {/* <div className="title_header">AQUASCAPE TUTORIAL</div> */}
         {isAdmin && (
           <>
-            <div>
+            <div className="div_button_after_login">
               <button className="btn_front">
                 <Link to="/admin">Admin</Link>
               </button>

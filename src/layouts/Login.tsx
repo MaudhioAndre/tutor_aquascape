@@ -81,14 +81,18 @@ export default function Login() {
   return (
     <>
       <form className="form_login" onSubmit={handleLogin}>
-        <div className="login_text">LOGIN</div>
+        <div className="login_text" data-testid="login_title">LOGIN</div>
         <div>
           <div>Username</div>
           <input
             type="text"
             onChange={(e) => setUsername(e.target.value)}
-            maxLength={200}
+            maxLength={20}
+            // name="username"
             className="input_login"
+            data-testid="username"
+            autoFocus
+            required
           />
         </div>
         <div>
@@ -96,8 +100,10 @@ export default function Login() {
           <input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
-            maxLength={50}
+            maxLength={20}
             className="input_login"
+            data-testid="password"
+            required
           />
         </div>
         <button type="submit" className="btn_submit">

@@ -2,54 +2,43 @@ import React, { useState, useEffect, useRef } from "react";
 
 import axios from "axios";
 import RSModalSpinner from "../components/etc/RSModalSpinner";
-import ContentBlog from "../components/content/ContentBlog";
+import ContentKategori from "../components/content/ContentKategori";
 import ModalBlog from "../components/content/ModalBlog";
 
 import { Helmet } from 'react-helmet-async';
-export interface blogType {
+import ModalKategori from "../components/content/ModalKategori";
+export interface kategoriType {
   id: string;
-  judul: string;
-  kategori: number;
+  nama: string;
   foto: string;
-  url_slug: string;
-  alt_img: string;
-  meta_desc: string;
-  createdAt: string;
   recordStatus: string;
-  deskripsi: string;
 }
 interface typeRef {
   setStatusModal(value: boolean): void;
 }
 
-export default function BlogAdmin() {
-  const [blog, setBlog] = useState<blogType[]>([]);
-  const [dataEdit, setDataEdit] = useState<blogType>({
+export default function KategoriAdmin() {
+  const [kategori, setKategori] = useState<kategoriType[]>([]);
+  const [dataEdit, setDataEdit] = useState<kategoriType>({
     id: "",
-    judul: "",
-    kategori: 0,
-    url_slug: "",
-    alt_img: "",
-    meta_desc: "",
+    nama: "",
     foto: "",
-    createdAt: "",
     recordStatus: "",
-    deskripsi: "",
   });
   const [modal, setModal] = useState<boolean>(false);
   const [aksi, setAksi] = useState<string>("tambah");
 
-  const getBlog = async () => {
+  const getKategori = async () => {
     console.log("getParam4");
     childRef.current?.setStatusModal(true);
     await axios
-      .get(`${window.config.api}/getblog`)
+      .get(`${window.config.api}/getkategori`)
       .then((res) => {
         console.log(res);
         if (res.data.Error == 0) {
-          setBlog(res.data.blog);
+          setKategori(res.data.kategori);
         } else {
-          setBlog([]);
+          setKategori([]);
         }
         childRef.current?.setStatusModal(false);
       })
@@ -60,7 +49,7 @@ export default function BlogAdmin() {
   };
 
   useEffect(() => {
-    getBlog();
+    getKategori();
   }, []);
 
   function openModalEdit() {
@@ -74,27 +63,27 @@ export default function BlogAdmin() {
   return (
     <>
       <Helmet>
-        <title>Blog | {window.config.appname}</title>
+        <title>Kategori | {window.config.appname}</title>
       </Helmet>
       <RSModalSpinner ref={childRef} />
       <div className="div_title_blog_page">
-        <div className="div_title_blog">BLOG</div>
+        <div className="div_title_blog">KATEGORI</div>
         <button className="btn_admin" onClick={() => setModal(true)}>
           Tambah
         </button>
       </div>
       <div className="hr" />
       <div className="content_blog_utama">
-        <ContentBlog
-          blog={blog}
-          getBlog={getBlog}
+        <ContentKategori
+          kategori={kategori}
+          getKategori={getKategori}
           openModalEdit={openModalEdit}
           setDataEdit={setDataEdit}
           setStatusModal={childRef.current?.setStatusModal}
         />
       </div>
-      <ModalBlog
-        getBlog={getBlog}
+      <ModalKategori
+        getKategori={getKategori}
         modalIsOpen={modal}
         aksiModal={aksi}
         setAksi={setAksi}

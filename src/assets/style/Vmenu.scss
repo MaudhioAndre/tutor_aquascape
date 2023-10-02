@@ -1,0 +1,322 @@
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1A5F7A;
+    padding: 10px 20px;
+
+    // position: fixed;
+    top: 0;
+    width: -webkit-fill-available;
+}
+
+.toggle-menu{
+    display: none;
+}
+
+.div-menu{
+    display: flex;
+    // justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    // width: 800px;
+    width: 100%;
+}
+
+.img-logo{
+    width: 40px;
+}
+
+.menu-nav{
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 1px solid transparent;
+
+    &:hover{
+        transition: 200ms;
+        border-bottom: 1px solid;
+    }
+}
+
+.ud-menu>button{
+    background: transparent !important;
+    border: unset !important;
+    padding: unset !important;
+}
+
+.nested-menu{
+    transform: translate(157px, -5px) !important;
+}
+
+.ud-menu2>button{
+    background-color: transparent !important;
+    border: unset !important;
+    border-radius: unset;
+    width: 100%;
+    color: #dee2e6 !important;
+    padding: 4px 16px;
+    text-align: left;
+    
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    ::after{
+        vertical-align: 2px !important;
+    }
+}
+
+.ud-menu2>button::after{
+    vertical-align: 2px !important;
+}
+
+// .ud-menu2>.dropend .dropdown-toggle::after {
+//     vertical-align: 2px !important;
+// }
+
+@media screen and (max-width: 600px) {
+
+    .ud-menu{
+        padding: 20px 0px !important;
+    }
+    
+    .ud-menu>div{
+        position: inherit !important;
+        transform: unset !important;
+        inset: unset !important;
+        margin-top: 10px;
+    }
+
+
+    .ud-menu2>button{
+        padding: 0px 16px;
+        text-align: left;
+    }
+
+    .nested-menu {
+        transform: translate(178px, -5px) !important;
+    }
+
+    .menu-utama{
+        display: flex;
+        position: fixed;
+        top: 0;
+        height: 101%;
+    }
+
+    .topnav{
+        transition: 300ms;
+        display: block;
+        position: unset;
+        top: 0;
+        // margin-left: -230px;
+        // margin-left: -160px;
+        margin-left: -120px;
+        // margin-left: -140px;
+        width: -webkit-fill-available;
+    }
+
+    .div-logo{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .toggle-menu{
+        display: block;
+        width: 50px;
+        height: 43px;
+        top: 12px;
+        left: 12px;
+        // left: 50px;
+        border: unset;
+        border-radius: 3px;
+        position: relative;
+        background-color: #1A5F7A;
+    }
+
+    .div-menu{
+        // transform: translateY(0px) translateX(0px);
+        // transition: transform 400ms ease 0s;
+        display: block;
+        margin-top: 10px;
+        // background-color: black;
+        position: unset;
+        // left: 0;
+        width: 100%;
+    }
+
+    .menu-nav{
+        float: none;
+        display: block;
+        font-weight: 600;
+        text-align: left;
+        padding: 20px 0px;
+    }
+
+    .responsive .div-menu{
+        display: block;
+    }
+
+    .responsive{
+        // display: block !important;
+        transition: 300ms;
+        margin-left: 0px;
+    }
+}
+
+
+// ----------------- //
+//DROPDOWN HOVER STYLE
+.caret-dd{
+    color: inherit;
+    margin-left: 7px;
+}
+
+.dd-div-item{
+    display: none;
+    position: absolute;
+    top: 60px;
+    
+    width: 150px;
+}
+
+.dd-hover{
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:hover .dd-div-item{
+        display: block;
+    }
+}
+
+.dd-menu-nav{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    background-color: darkgrey;
+
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dd-menu-nav{
+        color: black;
+        padding: 20px 15px;
+        background-color: cyan;
+    
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+
+    .dd-div-item{        
+        position: unset;
+        width: 100%;
+    }
+
+    .dd-text-toggle{
+        padding: 20px 0px;
+    }
+}
+
+
+// ----------------- //
+//DROPDOWN TOGGLE STYLE
+.caret-dt{
+    color: inherit;
+    margin-left: 7px;
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+.dt-text{
+    color: white !important;
+    cursor: pointer;
+
+    //SUPAYA GABISA DI COPY TEXT NYA
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.dt-div-item{
+    position: absolute;
+    top: 60px;
+    background-color: darkgrey;
+}
+
+.dt-menu-nav{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    width: 150px;
+
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dt-div-item{
+        position: unset;
+        top: 60px;
+        background-color: cyan;
+    }
+
+    .dt-menu-nav{
+        color: black;
+        padding: 20px 15px;
+        width: 100%;
+    }
+
+    .dt-text{
+        padding: 20px 0px;
+    }
+}
+
+.my-dropdown{
+    
+}
+
+.rdn-control{
+    width: 100% !important;
+    padding-right: 30px !important;
+    background-color: transparent !important;
+    border: unset !important;
+    color: white !important;
+
+    :hover{
+        cursor: pointer;
+    }
+}
+
+.rdn-drop{
+    background-color: darkgrey !important;
+    border: unset !important;
+}
+
+// div[role='menu'] {
+//     visibility: hidden;
+// }
+
+// div[role='menu'].visible {
+//     visibility: visible;
+// }

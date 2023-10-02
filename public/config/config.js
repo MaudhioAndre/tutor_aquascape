@@ -1,15 +1,17 @@
 // config local
 window.configDev = {
-    appname: "Tutorial Aquascape",
-    version: "1.3.24",
+    appname: "Aquascape Guide",
+    version: "1",
     api: "http://localhost/tutorial_aquascape_api",
+    url_front : "http://localhost:3000/#/",
     pathname: "/",
   };
   
   window.configProd = {
-    appname: "Tutorial Aquascape",
-    version: "1.3.315.38.2",
-    year: "2021",
-    api: "https://maudhio.000webhostapp.com/api",
+    appname: "Aquascape Guide",
+    version: "1",
+    year: "2023",
+    api: "https://aquascapeguide.bilalabdilah.com/api",
+    url_front : "https://aquascapeguide.bilalabdilah.com/#/",
     pathname: "dhammawangsaDev",
   };

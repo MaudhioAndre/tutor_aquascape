@@ -11,6 +11,7 @@ import RSModalSpinner from "../components/etc/RSModalSpinner";
 import SidebarAdmin from "../components/etc/SidebarAdmin";
 
 import "../assets/style/admin.scss";
+import KategoriAdmin from "../pages/KategoriAdmin";
 
 interface typeRef {
   setStatusModal(value: boolean): void;
@@ -26,13 +27,9 @@ export default function Admin() {
 
   function CekAdmin(){
     console.log('CekAdmin');
-    
-
     var formData = new FormData();
     formData.append("kode_akses", kode_akses);
-
     childRef.current?.setStatusModal(true);
-
     axios
       .post(`${window.config.api}/cekadmin`, formData)
       .then((res) => {
@@ -69,6 +66,7 @@ export default function Admin() {
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/" element={<DashboardAdmin />} />
         <Route path="/blog" element={<BlogAdmin />} />
+        <Route path="/kategori" element={<KategoriAdmin />} />
       </Routes>
       </div>
       </div>
